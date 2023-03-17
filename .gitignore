@@ -1,0 +1,19 @@
+.gradle/**
+/.idea/**
+build/**
+gradlew
+gradlew.bat
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+out/
+PlayWrite01.iml
+settings.gradle.kts
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
