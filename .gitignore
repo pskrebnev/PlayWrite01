@@ -1,5 +1,5 @@
 .gradle/**
-/.idea/**
+.idea/**
 build/**
 gradlew
 gradlew.bat
@@ -8,6 +8,7 @@ gradlew.bat
 *.iws
 *.iml
 *.ipr
+*.jar
 out/
 PlayWrite01.iml
 settings.gradle.kts
