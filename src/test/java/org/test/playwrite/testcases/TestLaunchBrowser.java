@@ -48,6 +48,7 @@ public class TestLaunchBrowser {
 
     @AfterClass
     public void tierDown() {
+        page.close();
         pw.close();
     }
 }
