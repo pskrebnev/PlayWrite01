@@ -28,7 +28,8 @@ public class TestLaunchBrowser {
         // through properties
         ArrayList<String> arguments = new ArrayList<>();
         arguments.add("--start-maximized");
-        browser = pw.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
+//        browser = pw.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
+        browser = pw.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
 
         BrowserContext bc = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page = bc.newPage();
