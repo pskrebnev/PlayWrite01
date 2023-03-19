@@ -9,7 +9,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public class TestLaunchBrowser {
@@ -37,7 +38,7 @@ public class TestLaunchBrowser {
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
 
-        System.out.println(width+"---"+height);
+        System.out.println(width + "---" + height);
     }
 
     @Test
