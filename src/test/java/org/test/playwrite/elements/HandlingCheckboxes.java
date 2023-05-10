@@ -20,7 +20,6 @@ public class HandlingCheckboxes extends Launch {
                 "following-sibling::div[1]/.//input[@type='checkbox']");
 
         page.navigate(URL_PAGE1);
-        Thread.sleep(60_000);
 
         for (int i = 0; i < setCheckboxes.count(); i++) {
             setCheckboxes.nth(i).click();
