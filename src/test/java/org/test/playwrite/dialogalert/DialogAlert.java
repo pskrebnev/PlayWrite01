@@ -1,6 +1,5 @@
 package org.test.playwrite.dialogalert;
 
-import com.microsoft.playwright.Dialog;
 import com.microsoft.playwright.Locator;
 import org.test.playwrite.prepare.Launch;
 import org.testng.annotations.AfterClass;
@@ -22,16 +21,26 @@ public class DialogAlert extends Launch {
         System.out.println("Page title is <" + page.title() + ">");
         Locator alertButtons = page.locator("//button[contains(text(), 'Click me')]");
 
+        Locator button = alertButtons.nth(0);
+
         // click on first button
-        alertButtons.nth(0).click();
-//        Thread.sleep(3000);
-        System.out.println("Text = " + alertButtons.nth(0).innerText());
+        button.hover();
+        Thread.sleep(5000);
+        button.click();
+        Thread.sleep(9000);
+
+
+        System.out.println("Text = " + button.innerText());
 
         page.onDialog(dialog -> {
-            System.out.println("Text alert = '" + dialog.message() + "'");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             dialog.accept();
+            System.out.println("Text alert = '" + dialog.message() + "'");
         });
-
 //        page.onDialog(Dialog::accept);
     }
 
