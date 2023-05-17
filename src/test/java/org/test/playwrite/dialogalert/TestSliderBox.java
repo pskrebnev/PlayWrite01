@@ -17,13 +17,26 @@ public class TestSliderBox extends Launch {
 
         page.navigate(url);
         BoundingBox slBox = page.locator(sliderBox).boundingBox();
+        BoundingBox slPoint = page.locator(sliderPoint).boundingBox();
 
+        System.out.println("Value before = '" + page.locator(infoBox).getAttribute("value") + "'");
+
+        page.mouse().click(slBox.x + slBox.width/2, slBox.y + slBox.height/2);
+
+//        page.mouse().move(slPoint.x + slPoint.height/2, slPoint.y + slPoint.width/2);
+//        page.mouse().down();
+//        page.mouse().move(slPoint.x + slPoint.height/2 + slBox.width/2, slPoint.y + slPoint.width/2);
+//        page.mouse().up();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("Height = " + slBox.height + ". Width = " + slBox.width);
-
-
-
-
+        System.out.println("Height = " + slBox.x + ". Width = " + slBox.y);
+        System.out.println("Value after = '" + page.locator(infoBox).getAttribute("value") + "'");
     }
 
     @BeforeClass
