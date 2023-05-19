@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ShadowDom extends Launch {
+public class TestShadowDom extends Launch {
 
     @Test
     public void testShadowDom() {
