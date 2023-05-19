@@ -17,7 +17,7 @@ public class TestSliderBox extends Launch {
 
         page.navigate(url);
         BoundingBox slBox = page.locator(sliderBox).boundingBox();
-        BoundingBox slPoint = page.locator(sliderPoint).boundingBox();
+        BoundingBox slPoint = page.locator(sliderPoint).boundingBox(); // for future implementations
 
         System.out.println("Value before = '" + page.locator(infoBox).getAttribute("value") + "'");
 
