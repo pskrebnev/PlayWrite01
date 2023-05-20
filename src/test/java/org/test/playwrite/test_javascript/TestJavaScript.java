@@ -10,6 +10,7 @@ public class TestJavaScript extends Launch {
     // Scenario:
     // 1. navigate 'https://aquapark.wroc.pl/en'
     // 2. add text area by JS
+    // 3. make a screenshot (TBD)
     @Test
     public void testJavaScript() {
         String url = "https://aquapark.wroc.pl/en";
