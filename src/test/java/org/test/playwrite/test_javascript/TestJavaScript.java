@@ -10,7 +10,8 @@ public class TestJavaScript extends Launch {
     // Scenario:
     // 1. navigate 'https://aquapark.wroc.pl/en'
     // 2. add text area by JS
-    // 3. make a screenshot (TBD)
+    // 3. type text
+    // 4. make a screenshot (TBD)
     @Test
     public void testJavaScript() {
         String url = "https://aquapark.wroc.pl/en";
@@ -19,9 +20,17 @@ public class TestJavaScript extends Launch {
                 "document.body.append(textArea);" +
                 "textArea.focus();" +
                 "}";
+        String text = "Juliush Howanski!!!";
 
         page.navigate(url);
         page.evaluate(jScript);
+        page.keyboard().type(text);
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("Evaluation JavaScript: " + page.evaluate("document.location.href"));
     }
