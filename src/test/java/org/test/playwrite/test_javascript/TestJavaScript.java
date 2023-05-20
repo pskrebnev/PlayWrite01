@@ -26,12 +26,6 @@ public class TestJavaScript extends Launch {
         page.evaluate(jScript);
         page.keyboard().type(text);
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
         System.out.println("Evaluation JavaScript: " + page.evaluate("document.location.href"));
     }
 
