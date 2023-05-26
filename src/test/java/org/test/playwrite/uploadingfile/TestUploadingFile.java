@@ -19,7 +19,18 @@ public class TestUploadingFile extends Launch {
     public void testUploadingSingleFile() {
         Path currentWorkingDir = Paths.get("").toAbsolutePath();
         System.out.println("WD: " + currentWorkingDir.normalize());
-        
+
+
+        File folder = new File(currentWorkingDir.normalize().toString() + "./resources/files");
+        File[] listOfFiles = folder.listFiles();
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            if (listOfFiles[i].isFile()) {
+                System.out.println("File " + listOfFiles[i].getName());
+            } else if (listOfFiles[i].isDirectory()) {
+                System.out.println("Directory " + listOfFiles[i].getName());
+            }
+        }
 
     }
 
