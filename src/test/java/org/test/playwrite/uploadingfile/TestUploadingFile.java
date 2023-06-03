@@ -1,6 +1,5 @@
 package org.test.playwrite.uploadingfile;
 
-import com.microsoft.playwright.Locator;
 import org.test.playwrite.prepare.Launch;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +8,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Locale;
 
 public class TestUploadingFile extends Launch {
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
@@ -34,11 +32,11 @@ public class TestUploadingFile extends Launch {
 
     @Test
     public void testPrintingFileNames() {
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                System.out.println("File '" + listOfFiles[i].getName() + "'");
-            } else if (listOfFiles[i].isDirectory()) {
-                System.out.println("Directory '" + listOfFiles[i].getName() + "'");
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                System.out.println("File '" + listOfFile.getName() + "'");
+            } else if (listOfFile.isDirectory()) {
+                System.out.println("Directory '" + listOfFile.getName() + "'");
             }
         }
         System.out.println("And the first file is = '" + listOfFiles[0].getName() + "'");
