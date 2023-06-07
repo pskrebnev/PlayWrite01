@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class BasicAuthentication extends Launch {
+public class TestBasicAuthentication extends Launch {
     String url = "http://the-internet.herokuapp.com/basic_auth";
     String username = "admin";
     String password = "admin";
