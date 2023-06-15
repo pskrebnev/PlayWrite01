@@ -13,13 +13,14 @@ public class Launch {
     protected Playwright pw;
     protected Browser browser;
     protected Page page;
+    protected BrowserContext bc;
 
     public void prepare() {
         pw = Playwright.create();
         ArrayList<String> properties = new ArrayList<>();
         properties.add("--start-maximized");
         browser = pw.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(properties));
-        BrowserContext bc = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
+        bc = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page = bc.newPage();
     }
 
