@@ -1,1 +1,1 @@
-# Experiments with Playwrite
+# Experiments with Playwright
